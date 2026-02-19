@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>CSS Colors Cheatsheet</title>
+</head>
+<body>
+
+<header>CSS Colors Cheatsheet</header>
+<p class="subtitle">// reference guide for web color formats</p>
+
+<!-- FORMAT OVERVIEW -->
+<section>
+  <h2>Color Formats</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Format</th>
+        <th>Syntax</th>
+        <th>Alpha?</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="color-name">Named</td>
+        <td class="code hex">red, coral, rebeccapurple</td>
+        <td>No</td>
+        <td class="note">140+ keywords</td>
+      </tr>
+      <tr>
+        <td class="color-name">HEX</td>
+        <td class="code hex">#RRGGBB</td>
+        <td class="note">via #RRGGBBAA</td>
+        <td class="note">3 or 6 digit</td>
+      </tr>
+      <tr>
+        <td class="color-name">RGB</td>
+        <td class="code rgb-val">rgb(255, 99, 71)</td>
+        <td class="note">via rgba()</td>
+        <td class="note">0–255 per channel</td>
+      </tr>
+      <tr>
+        <td class="color-name">HSL</td>
+        <td class="code hsl-val">hsl(9, 100%, 64%)</td>
+        <td class="note">via hsla()</td>
+        <td class="note">hue 0–360°</td>
+      </tr>
+      <tr>
+        <td class="color-name">HWB</td>
+        <td class="code" style="color:#f0a0ff">hwb(9 0% 0%)</td>
+        <td>No</td>
+        <td class="note">Hue, Whiteness, Blackness</td>
+      </tr>
+      <tr>
+        <td class="color-name">LCH</td>
+        <td class="code" style="color:#a0ffa0">lch(54% 107 29)</td>
+        <td>No</td>
+        <td class="note">Perceptually uniform</td>
+      </tr>
+      <tr>
+        <td class="color-name">currentColor</td>
+        <td class="code" style="color:#ffd700">currentColor</td>
+        <td>—</td>
+        <td class="note">Inherits from <code style="font-size:.8em">color</code> property</td>
+      </tr>
+      <tr>
+        <td class="color-name">transparent</td>
+        <td class="code muted">transparent</td>
+        <td>—</td>
+        <td class="note">rgba(0,0,0,0)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- HEX REFERENCE -->
+<section>
+  <h2>HEX Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Color</th>
+        <th>HEX</th>
+        <th>Short HEX</th>
+        <th>HEX + Alpha (50%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#ffffff"></div><span>White</span></div></td>
+        <td class="code hex">#FFFFFF</td>
+        <td class="code hex">#FFF</td>
+        <td class="code hex">#FFFFFF80</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#000000"></div><span>Black</span></div></td>
+        <td class="code hex">#000000</td>
+        <td class="code hex">#000</td>
+        <td class="code hex">#00000080</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#FF0000"></div><span>Red</span></div></td>
+        <td class="code hex">#FF0000</td>
+        <td class="code hex">#F00</td>
+        <td class="code hex">#FF000080</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#00FF00"></div><span>Lime</span></div></td>
+        <td class="code hex">#00FF00</td>
+        <td class="code hex">#0F0</td>
+        <td class="code hex">#00FF0080</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#0000FF"></div><span>Blue</span></div></td>
+        <td class="code hex">#0000FF</td>
+        <td class="code hex">#00F</td>
+        <td class="code hex">#0000FF80</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#FFFF00"></div><span>Yellow</span></div></td>
+        <td class="code hex">#FFFF00</td>
+        <td class="code hex">#FF0</td>
+        <td class="code hex">#FFFF0080</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#FF00FF"></div><span>Magenta</span></div></td>
+        <td class="code hex">#FF00FF</td>
+        <td class="code hex">#F0F</td>
+        <td class="code hex">#FF00FF80</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:#00FFFF"></div><span>Cyan</span></div></td>
+        <td class="code hex">#00FFFF</td>
+        <td class="code hex">#0FF</td>
+        <td class="code hex">#00FFFF80</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- RGB / RGBA -->
+<section>
+  <h2>RGB &amp; RGBA</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Color</th>
+        <th>rgb()</th>
+        <th>rgba() — 50% alpha</th>
+        <th>New syntax (CSS4)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:rgb(255,99,71)"></div><span>Tomato</span></div></td>
+        <td class="code rgb-val">rgb(255, 99, 71)</td>
+        <td class="code rgb-val">rgba(255, 99, 71, 0.5)</td>
+        <td class="code rgb-val">rgb(255 99 71 / 50%)</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:rgb(70,130,180)"></div><span>Steel Blue</span></div></td>
+        <td class="code rgb-val">rgb(70, 130, 180)</td>
+        <td class="code rgb-val">rgba(70, 130, 180, 0.5)</td>
+        <td class="code rgb-val">rgb(70 130 180 / 50%)</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:rgb(60,179,113)"></div><span>Medium Sea Green</span></div></td>
+        <td class="code rgb-val">rgb(60, 179, 113)</td>
+        <td class="code rgb-val">rgba(60, 179, 113, 0.5)</td>
+        <td class="code rgb-val">rgb(60 179 113 / 50%)</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:rgb(238,130,238)"></div><span>Violet</span></div></td>
+        <td class="code rgb-val">rgb(238, 130, 238)</td>
+        <td class="code rgb-val">rgba(238, 130, 238, 0.5)</td>
+        <td class="code rgb-val">rgb(238 130 238 / 50%)</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:rgb(255,165,0)"></div><span>Orange</span></div></td>
+        <td class="code rgb-val">rgb(255, 165, 0)</td>
+        <td class="code rgb-val">rgba(255, 165, 0, 0.5)</td>
+        <td class="code rgb-val">rgb(255 165 0 / 50%)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- HSL / HSLA -->
+<section>
+  <h2>HSL &amp; HSLA</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Color</th>
+        <th>hsl()</th>
+        <th>hsla() — 50% alpha</th>
+        <th>Hue Angle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(0,100%,50%)"></div><span>Red</span></div></td>
+        <td class="code hsl-val">hsl(0, 100%, 50%)</td>
+        <td class="code hsl-val">hsla(0, 100%, 50%, 0.5)</td>
+        <td class="code hsl-val">0°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(39,100%,50%)"></div><span>Orange</span></div></td>
+        <td class="code hsl-val">hsl(39, 100%, 50%)</td>
+        <td class="code hsl-val">hsla(39, 100%, 50%, 0.5)</td>
+        <td class="code hsl-val">39°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(60,100%,50%)"></div><span>Yellow</span></div></td>
+        <td class="code hsl-val">hsl(60, 100%, 50%)</td>
+        <td class="code hsl-val">hsla(60, 100%, 50%, 0.5)</td>
+        <td class="code hsl-val">60°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(120,100%,40%)"></div><span>Green</span></div></td>
+        <td class="code hsl-val">hsl(120, 100%, 40%)</td>
+        <td class="code hsl-val">hsla(120, 100%, 40%, 0.5)</td>
+        <td class="code hsl-val">120°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(180,100%,40%)"></div><span>Cyan</span></div></td>
+        <td class="code hsl-val">hsl(180, 100%, 40%)</td>
+        <td class="code hsl-val">hsla(180, 100%, 40%, 0.5)</td>
+        <td class="code hsl-val">180°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(240,100%,50%)"></div><span>Blue</span></div></td>
+        <td class="code hsl-val">hsl(240, 100%, 50%)</td>
+        <td class="code hsl-val">hsla(240, 100%, 50%, 0.5)</td>
+        <td class="code hsl-val">240°</td>
+      </tr>
+      <tr>
+        <td><div class="swatch-cell"><div class="swatch" style="background:hsl(300,100%,50%)"></div><span>Magenta</span></div></td>
+        <td class="code hsl-val">hsl(300, 100%, 50%)</td>
+        <td class="code hsl-val">hsla(300, 100%, 50%, 0.5)</td>
+        <td class="code hsl-val">300°</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CSS PROPERTIES -->
+<section>
+  <h2>CSS Properties</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Example</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="color-name">color</td>
+        <td class="code hex">color: #333;</td>
+        <td class="note">Text color</td>
+      </tr>
+      <tr>
+        <td class="color-name">background-color</td>
+        <td class="code hex">background-color: #f5f5f5;</td>
+        <td class="note">Element background</td>
+      </tr>
+      <tr>
+        <td class="color-name">border-color</td>
+        <td class="code rgb-val">border-color: rgb(0, 0, 0);</td>
+        <td class="note">All 4 borders</td>
+      </tr>
+      <tr>
+        <td class="color-name">outline-color</td>
+        <td class="code hsl-val">outline-color: hsl(210, 80%, 50%);</td>
+        <td class="note">Focus ring</td>
+      </tr>
+      <tr>
+        <td class="color-name">text-decoration-color</td>
+        <td class="code hex">text-decoration-color: red;</td>
+        <td class="note">Underline / strikethrough</td>
+      </tr>
+      <tr>
+        <td class="color-name">caret-color</td>
+        <td class="code hex">caret-color: #00ff9f;</td>
+        <td class="note">Input cursor color</td>
+      </tr>
+      <tr>
+        <td class="color-name">opacity</td>
+        <td class="code muted">opacity: 0.5;</td>
+        <td class="note">0 (invisible) – 1 (full), affects whole element</td>
+      </tr>
+      <tr>
+        <td class="color-name">background</td>
+        <td class="code hsl-val">background: linear-gradient(hsl(0,100%,50%), hsl(240,100%,50%));</td>
+        <td class="note">Supports gradients</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- COMMON NAMED COLORS -->
+<section>
+  <h2>Common Named Colors</h2>
+  <div class="named-grid">
+    <div class="named-item"><div class="swatch" style="background:aliceblue;border-color:rgba(0,0,0,.2)"></div><span>aliceblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:aqua"></div><span>aqua</span></div>
+    <div class="named-item"><div class="swatch" style="background:bisque"></div><span>bisque</span></div>
+    <div class="named-item"><div class="swatch" style="background:black;border-color:#333"></div><span>black</span></div>
+    <div class="named-item"><div class="swatch" style="background:blueviolet"></div><span>blueviolet</span></div>
+    <div class="named-item"><div class="swatch" style="background:chartreuse"></div><span>chartreuse</span></div>
+    <div class="named-item"><div class="swatch" style="background:chocolate"></div><span>chocolate</span></div>
+    <div class="named-item"><div class="swatch" style="background:coral"></div><span>coral</span></div>
+    <div class="named-item"><div class="swatch" style="background:cornflowerblue"></div><span>cornflowerblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:crimson"></div><span>crimson</span></div>
+    <div class="named-item"><div class="swatch" style="background:darkgoldenrod"></div><span>darkgoldenrod</span></div>
+    <div class="named-item"><div class="swatch" style="background:darkgreen"></div><span>darkgreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:darkorange"></div><span>darkorange</span></div>
+    <div class="named-item"><div class="swatch" style="background:deepskyblue"></div><span>deepskyblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:firebrick"></div><span>firebrick</span></div>
+    <div class="named-item"><div class="swatch" style="background:forestgreen"></div><span>forestgreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:fuchsia"></div><span>fuchsia</span></div>
+    <div class="named-item"><div class="swatch" style="background:gold"></div><span>gold</span></div>
+    <div class="named-item"><div class="swatch" style="background:goldenrod"></div><span>goldenrod</span></div>
+    <div class="named-item"><div class="swatch" style="background:hotpink"></div><span>hotpink</span></div>
+    <div class="named-item"><div class="swatch" style="background:indianred"></div><span>indianred</span></div>
+    <div class="named-item"><div class="swatch" style="background:indigo"></div><span>indigo</span></div>
+    <div class="named-item"><div class="swatch" style="background:khaki"></div><span>khaki</span></div>
+    <div class="named-item"><div class="swatch" style="background:lavender;border-color:rgba(0,0,0,.2)"></div><span>lavender</span></div>
+    <div class="named-item"><div class="swatch" style="background:limegreen"></div><span>limegreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:mediumaquamarine"></div><span>mediumaquamarine</span></div>
+    <div class="named-item"><div class="swatch" style="background:mediumorchid"></div><span>mediumorchid</span></div>
+    <div class="named-item"><div class="swatch" style="background:mediumpurple"></div><span>mediumpurple</span></div>
+    <div class="named-item"><div class="swatch" style="background:mediumseagreen"></div><span>mediumseagreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:midnightblue"></div><span>midnightblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:mintcream;border-color:rgba(0,0,0,.2)"></div><span>mintcream</span></div>
+    <div class="named-item"><div class="swatch" style="background:navy"></div><span>navy</span></div>
+    <div class="named-item"><div class="swatch" style="background:olive"></div><span>olive</span></div>
+    <div class="named-item"><div class="swatch" style="background:orangered"></div><span>orangered</span></div>
+    <div class="named-item"><div class="swatch" style="background:orchid"></div><span>orchid</span></div>
+    <div class="named-item"><div class="swatch" style="background:paleturquoise;border-color:rgba(0,0,0,.2)"></div><span>paleturquoise</span></div>
+    <div class="named-item"><div class="swatch" style="background:peachpuff;border-color:rgba(0,0,0,.2)"></div><span>peachpuff</span></div>
+    <div class="named-item"><div class="swatch" style="background:peru"></div><span>peru</span></div>
+    <div class="named-item"><div class="swatch" style="background:pink;border-color:rgba(0,0,0,.2)"></div><span>pink</span></div>
+    <div class="named-item"><div class="swatch" style="background:plum"></div><span>plum</span></div>
+    <div class="named-item"><div class="swatch" style="background:powderblue;border-color:rgba(0,0,0,.2)"></div><span>powderblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:rebeccapurple"></div><span>rebeccapurple</span></div>
+    <div class="named-item"><div class="swatch" style="background:rosybrown"></div><span>rosybrown</span></div>
+    <div class="named-item"><div class="swatch" style="background:royalblue"></div><span>royalblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:saddlebrown"></div><span>saddlebrown</span></div>
+    <div class="named-item"><div class="swatch" style="background:salmon"></div><span>salmon</span></div>
+    <div class="named-item"><div class="swatch" style="background:seagreen"></div><span>seagreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:sienna"></div><span>sienna</span></div>
+    <div class="named-item"><div class="swatch" style="background:silver"></div><span>silver</span></div>
+    <div class="named-item"><div class="swatch" style="background:skyblue"></div><span>skyblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:slateblue"></div><span>slateblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:slategray"></div><span>slategray</span></div>
+    <div class="named-item"><div class="swatch" style="background:springgreen"></div><span>springgreen</span></div>
+    <div class="named-item"><div class="swatch" style="background:steelblue"></div><span>steelblue</span></div>
+    <div class="named-item"><div class="swatch" style="background:tan"></div><span>tan</span></div>
+    <div class="named-item"><div class="swatch" style="background:teal"></div><span>teal</span></div>
+    <div class="named-item"><div class="swatch" style="background:thistle"></div><span>thistle</span></div>
+    <div class="named-item"><div class="swatch" style="background:tomato"></div><span>tomato</span></div>
+    <div class="named-item"><div class="swatch" style="background:turquoise"></div><span>turquoise</span></div>
+    <div class="named-item"><div class="swatch" style="background:violet"></div><span>violet</span></div>
+    <div class="named-item"><div class="swatch" style="background:wheat"></div><span>wheat</span></div>
+    <div class="named-item"><div class="swatch" style="background:white;border-color:rgba(0,0,0,.2)"></div><span>white</span></div>
+    <div class="named-item"><div class="swatch" style="background:yellowgreen"></div><span>yellowgreen</span></div>
+  </div>
+</section>
+
+<!-- CSS VARIABLES -->
+<section>
+  <h2>CSS Custom Properties (Variables)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Code</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="color-name">Define</td>
+        <td class="code hex">:root { --brand: #ff6b6b; }</td>
+        <td class="note">Global scope via :root</td>
+      </tr>
+      <tr>
+        <td class="color-name">Use</td>
+        <td class="code hex">color: var(--brand);</td>
+        <td class="note">Reference anywhere</td>
+      </tr>
+      <tr>
+        <td class="color-name">Fallback</td>
+        <td class="code hex">color: var(--brand, red);</td>
+        <td class="note">2nd arg = fallback value</td>
+      </tr>
+      <tr>
+        <td class="color-name">Override</td>
+        <td class="code hex">.dark { --brand: #ff9f9f; }</td>
+        <td class="note">Scoped to selector</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
